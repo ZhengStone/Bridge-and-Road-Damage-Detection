@@ -1,6 +1,6 @@
 import torch
 import torch.nn as nn
-from model.main_model import res152_fpn_convfc_train, unet_iden_convfc_train, effib1_fpn_convfc_train, mobilev3_fpn_convfc_train 
+from model.main_model import res152_fpn_convfc_train, effib1_fpn_convfc_train, mobilev3_fpn_convfc_train, effib1_Bifpn_convfc_train, res152_BiFPN_convfc_train, mobilev3_BiFPN_convfc_train
 from tools import model_train
 import torchvision.transforms as transforms
 
@@ -19,7 +19,7 @@ if __name__ == "__main__":
 
         model_train(data_csv_path = args.train_data_csv_path,
                     data_batch_size = args.train_data_batch_size,
-                    model_= effib1_fpn_convfc_train,
+                    model_= res152_BiFPN_convfc_train,
                     max_epoch = args.train_max_epoch,
                     model_save_path = args.train_model_save_path,
                     log_save_path = args.train_log_save_path,
